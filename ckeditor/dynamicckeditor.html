@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Ckeditor Instance Dynamically</title>
+<script type="text/javascript" src="ckeditor.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-git.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+ $('.ckeditor').ckeditor();
+});
+</script>
+<script>
+function newCkeditor(){
+$("#test").val(parseInt($("#test").val())+1);
+alert($("#test").val());
+var id = $("#test").val();
+$('<div><input type="text" name="option_'+id+'"><textarea id="CkEditor'+id+'" name="CkEditor'+id+'"><\/textarea><input type="radio"  name="'+id+'_Answer" class="is_right_answer" value="Yes"> Yes <input type="radio" class="is_right_answer" name="'+id+'_Answer" value="No"> No <\/div>')
+.appendTo('#body').find('textarea').ckeditor();
+}
+
+function clicked(){
+for ( instance in CKEDITOR.instances ){
+alert("ckeditor values : " + CKEDITOR.instances[instance].getData());
+}
+}
+
+</script>
+
+ 
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+<form id="one" method="post">
+
+<div class="module">
+
+ 
+
+<div class="banner" id="banner">
+
+<span>Ckeditor</span>
+
+</div>
+
+<input id="test" type = "hidden" value="1"/>
+
+ 
+
+<div class="body" id="body">
+
+ 
+<input type="text" name="option">
+<textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea><br/><br/>
+<input type="radio" name="is_right_answer" value="Yes"> Yes 
+<input type="radio" name="is_right_answer" value="No"> No
+ 
+
+ 
+
+</div>
+
+ 
+
+ 
+
+ 
+
+</div>
+
+ 
+
+</form>
+
+<p><input type="button" value="Create New Ckeditor Instance Dynamically" onclick="javascript:newCkeditor()"></button></p>
+
+<input type="submit" value="Submit" onClick="clicked()"/>
+
+ 
+
+</body>
+
+ 
+
+</html>
