@@ -78,7 +78,7 @@
           <ul class="treeview-menu">
             <li><a <?php if($url == 'questiontype'){echo 'class="currentSelect"';} ?> href="<?php echo base_url('questiontype'); ?>"><i class="fa fa-circle-o"></i> Question Type Master</a></li>
             <li><a <?php if($url == 'addquestion'){echo 'class="currentSelect"';} ?> href="<?php echo base_url('addquestion'); ?>"><i class="fa fa-circle-o"></i> Add Question</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="<?php echo base_url('bulk'); ?>"><i class="fa fa-circle-o"></i> Bulk Upload</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
